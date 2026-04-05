@@ -1,4 +1,4 @@
-import React, { useContext , useEffect , useState} from "react";
+import React, { useContext , useEffect , useState , useCallback} from "react";
 import noteContext from "../Context/Notes/noteContext";
 import NoteItems from "./NoteItems";
 import AddNote from "./AddNote";
@@ -9,10 +9,18 @@ const Notes = () => {
   const { notes , fetchNotes , token } = context;
 
     // Fetch once when component loads
-  useEffect( () => {
-     fetchNotes();
-  }, [token]);
+  // Wrap fetchNotes in useCallback to satisfy ESLint
+  const fetchNotesCallback = useCallback(() => {
+    if (token) {
+      fetchNotes();
+    }
+  }, [fetchNotes, token]);
 
+  // Fetch notes when token changes
+  useEffect(() => {
+    fetchNotesCallback();
+  }, [fetchNotesCallback]);
+ 
   const[edit,setEdit] = useState(false);
   const[editNoteid,setEditNoteid] = useState(null);
 
@@ -34,3 +42,4 @@ const Notes = () => {
 };
 
 export default Notes;
+ 

@@ -21,7 +21,7 @@ const Notes = () => {
     fetchNotesCallback();
   }, [fetchNotesCallback]);
  
-  const[edit,setEdit] = useState(false);
+  const[edit,setEdit] = useState(false); 
   const[editNoteid,setEditNoteid] = useState(null);
 
   return (

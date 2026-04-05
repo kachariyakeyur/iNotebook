@@ -72,7 +72,7 @@ const NoteState = (props) => {
 
     // API call
 
-    const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+    await fetch(`${host}/api/notes/updatenote/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,6 @@ const NoteState = (props) => {
       body: JSON.stringify({title , description , tag}),
     });
 
-    const json = await response.json();
 
     // Edit
    fetchNotes();

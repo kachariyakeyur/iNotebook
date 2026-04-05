@@ -9,6 +9,7 @@ require('dotenv').config();
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
+
 // ROUTE 1 : Create a user using : POST "/api/auth/createuser". Doesn't required auth
 
 router.post('/createuser',[

@@ -2,11 +2,12 @@ import React, { useState  } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
-  const token = localStorage.getItem("token");
-  const host = "http://localhost:5000";
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const host = "https://inotebook-backend-c05i.onrender.com";
   const notesInitial = [];
 
   const [notes, setNotes] = useState(notesInitial);
+    
 
   //Fetch all a Notes
 
@@ -84,10 +85,19 @@ const NoteState = (props) => {
 
     // Edit
    fetchNotes();
+
+};
+
+     // clear
+
+   const clearNotes = () => {
+  setNotes([]); 
+
+   
   };
 
   return (
-    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, fetchNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, fetchNotes , setToken , token , clearNotes}}>
       {props.children}
     </NoteContext.Provider>
   );

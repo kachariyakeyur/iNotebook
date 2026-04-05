@@ -1,8 +1,22 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Link , useLocation} from "react-router-dom"
+import noteContext from "../Context/Notes/noteContext";
+
+
 
 function Navbar() {
+
+      const context = useContext(noteContext);
+    const { clearNotes} = context;
+
         let location = useLocation();
+
+          const handleLogout = () => {
+    localStorage.removeItem("token");
+    clearNotes();
+
+  };
+
         
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -35,7 +49,7 @@ function Navbar() {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <Link className="btn btn-primary mx-2" to="/login" role="button" onClick={()=>{localStorage.removeItem("token");}}>LogOut</Link>
+            <Link className="btn btn-primary mx-2" to="/login" role="button" onClick={handleLogout}>LogOut</Link>
           </form>
         </div>
       </div>

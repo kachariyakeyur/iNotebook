@@ -6,12 +6,12 @@ import EditNote from "./EditNote";
 
 const Notes = () => {
   const context = useContext(noteContext);
-  const { notes , fetchNotes } = context;
+  const { notes , fetchNotes , token } = context;
 
     // Fetch once when component loads
-  useEffect(() => {
-    fetchNotes();
-  }, []);
+  useEffect( () => {
+     fetchNotes();
+  }, [token]);
 
   const[edit,setEdit] = useState(false);
   const[editNoteid,setEditNoteid] = useState(null);

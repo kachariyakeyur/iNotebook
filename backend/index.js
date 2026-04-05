@@ -3,7 +3,6 @@ const express = require('express')
 const cors = require('cors');
 require('dotenv').config();
 
-connectToMongo();
 
 const app = express()
 
@@ -18,7 +17,16 @@ app.use(express.json())
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/notes',require('./routes/notes'))
 
+const startServer = async () => {
+  try {
+    await connectToMongo(); // wait for DB first
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`);
+    });
+  } catch (error) {
+    console.error("Failed to connect MongoDB:", error);
+  }
+};
+
+startServer();

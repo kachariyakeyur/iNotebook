@@ -1,8 +1,13 @@
-import React , {useState} from "react";
+import React , {useState , useContext} from "react";
 import {useNavigate , Link} from "react-router-dom";
+import noteContext from "../Context/Notes/noteContext";
 
 
 const Register = () => {
+
+    
+  const context = useContext(noteContext);
+  const { setToken } = context;
 
     const navigate = useNavigate();
 
@@ -12,7 +17,7 @@ const Register = () => {
   const submit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch("https://inotebook-backend-c05i.onrender.com/api/auth/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,6 +30,7 @@ const Register = () => {
     if(json.success)
     {
         localStorage.setItem("token",json.authtoken);
+        setToken(localStorage.getItem("token"))
         navigate('/');
     }
     else { alert("Enter Valid Email")}

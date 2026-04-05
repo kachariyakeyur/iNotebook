@@ -1,7 +1,12 @@
-import React , {useState} from "react";
+import React , {useState , useContext} from "react";
 import {useNavigate , Link} from "react-router-dom";
+import noteContext from "../Context/Notes/noteContext";
 
 const Login = () => {
+
+
+    const context = useContext(noteContext);
+    const { setToken , fetchNotes} = context;
 
     const navigate = useNavigate();
 
@@ -11,7 +16,7 @@ const Login = () => {
   const submit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const response = await fetch("https://inotebook-backend-c05i.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,6 +29,7 @@ const Login = () => {
     if(json.success)
     {
         localStorage.setItem("token",json.authtoken);
+        setToken(json.authtoken)
         navigate('/');
     }
     else { alert("false details")}

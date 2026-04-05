@@ -1,0 +1,100 @@
+.abg{
+    color: aliceblue;
+}
+
+.home{
+    color: aliceblue;
+}
+
+.notes h2{
+    text-align: center;
+    color: rgb(0, 205, 38);
+}
+
+.notes h4{
+    text-align: center;
+    color: rgb(255, 67, 67);
+}
+
+.item {
+    background-color:bisque;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.item:hover{
+    background-color: bisque;
+    box-shadow: 0 0 25px bisque ;
+    transform: scale(1.03);
+}
+
+.card-title{
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.card-text{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+
+.note-position{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.note{
+    background-color: rgba(158, 229, 255, 0.812);
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.note h2{
+    text-align: center;
+
+}
+
+.form-control{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.note-button{
+    text-align: center;
+    align-items: center;
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.5s;
+    font-weight: 700;
+}
+
+.note-button:hover{
+    font-weight: 700;
+    background-color: bisque;
+    box-shadow: 0 0 15px bisque ;
+}
+
+
+.note-button:disabled {
+    font-weight: 700;
+  background-color: rgb(88, 165, 172);
+  cursor: not-allowed;
+  opacity: 0.6;
+  border: 0cap;
+}
+
+
+.card-title{
+    overflow: hidden;
+    
+}

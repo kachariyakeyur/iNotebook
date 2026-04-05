@@ -1,0 +1,63 @@
+body{
+    padding: 0%;
+    margin: 0%;
+    background-color: rgb(22, 22, 54);
+    color: rgb(0, 0, 0);
+}
+
+.LS-container{
+    padding-top: 4.5%;
+    padding-inline: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.LS-card{
+    border-radius: 10px;
+    background-color: rgba(158, 229, 255, 0.812);
+    padding: 2%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.LS-card img{
+      width: 80px;
+  height: 80px;
+  object-fit: cover;
+    display: block;
+  margin: 0 auto;
+  overflow: hidden;
+    
+}
+
+.LS-card h2{
+    text-align: center;
+    padding: 6px;
+}
+
+.form-label{
+    font-weight: 500;
+}
+
+.button{
+    background-color: rgb(79, 182, 231);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: 600;
+    padding-top: 10px;
+    transition: 1s;
+}
+
+.button:hover{
+    box-shadow: 0 0 25px #0d5190;
+}
+
+.button:active{
+    background-color: aliceblue;
+}

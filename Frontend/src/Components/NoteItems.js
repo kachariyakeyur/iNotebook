@@ -5,7 +5,7 @@ function NoteItems(props) {
   const { note , setEdit , setEditNoteid} = props;
 
   const context = useContext(noteContext);
-  const { deleteNote , editNote } = context;
+  const { deleteNote } = context;
 
   const dNote = () => {
     

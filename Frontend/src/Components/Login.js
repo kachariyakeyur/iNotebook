@@ -6,7 +6,7 @@ const Login = () => {
 
 
     const context = useContext(noteContext);
-    const { setToken , fetchNotes} = context;
+    const { setToken } = context;
 
     const navigate = useNavigate();
 

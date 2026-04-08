@@ -33,7 +33,11 @@ const Register = () => {
         setToken(localStorage.getItem("token"))
         navigate('/');
     }
-    else { alert("Enter Valid Email")}
+    else { alert("Enter Valid Email or Password");
+            setData({ name : "", email : "" , password : ""}
+            
+            )
+    }
   };
 
     const onChange = (e)=>{
@@ -48,11 +52,11 @@ const Register = () => {
         <h2>Create Account</h2>
         <div className="mb-2">
           <label htmlFor="name" className="form-label" >Full Name</label>
-          <input type="text" id="name" name="name" onChange={onChange} className="form-control" placeholder="Enter your full name" required />
+          <input type="text" id="name" name="name" onChange={onChange} value={data.name} className="form-control" placeholder="Enter your full name" required />
         </div>
         <div className="mb-2">
           <label htmlFor="email" className="form-label">Email Address</label>
-          <input type="email" id="email" name="email" onChange={onChange} className="form-control" placeholder="Enter valid email" required />
+          <input type="email" id="email" name="email" onChange={onChange} value={data.email} className="form-control" placeholder="Enter valid email" required />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
@@ -60,7 +64,7 @@ const Register = () => {
         
         <div className="mb-3">
           <label htmlFor="password" className="form-label" >Password</label>
-          <input type="password" id="password" name="password" onChange={onChange} className="form-control" placeholder="Create strong password" required />
+          <input type="password" id="password" name="password" onChange={onChange} value={data.password} className="form-control" placeholder="Create strong password (minimum length 5)" required />
         </div>
         <button type="submit" className="button" >
           Register

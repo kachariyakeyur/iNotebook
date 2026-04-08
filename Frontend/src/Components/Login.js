@@ -32,7 +32,10 @@ const Login = () => {
         setToken(json.authtoken)
         navigate('/');
     }
-    else { alert("false details")}
+    else { alert("Enter valid Email or Password");
+            setData({ email : "" , password : ""});
+            
+    }
   };
 
     const onChange = (e)=>{
@@ -56,6 +59,7 @@ const Login = () => {
             aria-describedby="emailHelp"
             name="email"
             onChange={onChange}
+            value={data.email}
             placeholder="Enter Email"
             required
           />
@@ -73,6 +77,7 @@ const Login = () => {
             id="password"
             name="password"
             onChange={onChange}
+            value={data.password}
             placeholder="Enter password"
             required
           />

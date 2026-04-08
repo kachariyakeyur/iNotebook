@@ -46,11 +46,11 @@ const Register = () => {
       <form className="LS-card" onSubmit={submit}>
         <img src="sketchbook.png" alt="notebook" />
         <h2>Create Account</h2>
-        <div className="mb-3">
+        <div className="mb-2">
           <label htmlFor="name" className="form-label" >Full Name</label>
           <input type="text" id="name" name="name" onChange={onChange} className="form-control" placeholder="Enter your full name" required />
         </div>
-        <div className="mb-3">
+        <div className="mb-2">
           <label htmlFor="email" className="form-label">Email Address</label>
           <input type="email" id="email" name="email" onChange={onChange} className="form-control" placeholder="Enter valid email" required />
           <div id="emailHelp" className="form-text">

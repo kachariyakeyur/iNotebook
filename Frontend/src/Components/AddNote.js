@@ -51,9 +51,9 @@ function AddNote() {
             <label htmlFor="description" className="form-label">
               <h3>Notes</h3>
             </label>
-            <input
+            <textarea
               type="text"
-              className="form-control"
+              className="form-control textarea"
               id="description"
               name="description"
               value={note.description}
@@ -78,7 +78,7 @@ function AddNote() {
             />
           </div>
           
-          <button type="submit" className="btn note-button" onClick={add} disabled={note.title.length<3 || note.description.length <5} >
+          <button type="submit" className="button" onClick={add} disabled={note.title.length<3 || note.description.length <5} >
             Add Note
           </button>
         </form>

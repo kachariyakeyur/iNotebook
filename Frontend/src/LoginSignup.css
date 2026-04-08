@@ -1,33 +1,41 @@
 body{
     padding: 0%;
     margin: 0%;
-    background-color: rgb(22, 22, 54);
-    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .LS-container{
-    padding-top: 4.5%;
-    padding-inline: 7%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #0d1117; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
 }
 
 .LS-card{
     border-radius: 10px;
-    background-color: rgba(158, 229, 255, 0.812);
+    background-color: rgba(18, 18, 18, 0.812);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(16, 87, 149, 0.175);
     padding: 2%;
-    width: 35%;
+    width: 26%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-sizing: border-box;
+    box-shadow: 8px 15px 35px rgba(103, 103, 103, 0.477);
+
+
+    
 }
 
 .LS-card img{
-      width: 80px;
-  height: 80px;
+      width: 70px;
+  
   object-fit: cover;
     display: block;
   margin: 0 auto;
@@ -38,26 +46,201 @@ body{
 .LS-card h2{
     text-align: center;
     padding: 6px;
+    color: rgb(255, 255, 255);
 }
 
 .form-label{
-    font-weight: 500;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
 }
 
+.form-text{
+ 
+    color: rgb(125, 125, 125);
+}
+
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  border: 1px solid #30363d;
+  background: #000000;
+  color: #e6edf3;
+
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+
+.form-control::placeholder {
+  color: #6e7681;
+}
+
+
+.form-control:focus {
+   background: #000000;
+  border-color: #58a6ff;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px 4px rgba(88, 166, 255, 0.25);
+  outline: none;
+}
+
+
 .button{
-    background-color: rgb(79, 182, 231);
+    background-color:rgb(0, 136, 255);
+    color: #000000;
     padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 0px;
+    border-radius: 50px;
     font-weight: 600;
     padding-top: 10px;
     transition: 1s;
 }
 
-.button:hover{
-    box-shadow: 0 0 25px #0d5190;
+.button:not(:disabled):hover {
+    background-color:rgb(0, 136, 255);
+    color: #000000;
+    box-shadow: 0px 0px 25px #2e56c3;
+    transform: scale(1.02) translateY(-1px);
+     
 }
 
 .button:active{
-    background-color: aliceblue;
+   
+  transform: scale(1);   
+  background: #ffffff;
 }
+
+button:disabled {
+  background-color: #ccc;
+  color: #000000;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+/* 
+
+.LS-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #0d1117; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+.LS-card {
+  width: 25%;
+  padding: 32px;
+
+  background: #161b22; 
+  border-radius: 12px;
+
+  border: 1px solid #30363d;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.LS-card img {
+  width: 60px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+
+.LS-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #e6edf3; 
+}
+
+
+.form-label {
+  font-size: 13px;
+  color: #c9d1d9;
+  margin-bottom: 6px;
+}
+
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #e6edf3;
+
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+
+.form-control::placeholder {
+  color: #6e7681;
+}
+
+
+.form-control:focus {
+    background: #0d1117;
+  border-color: #58a6ff;
+  color: aliceblue;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.25);
+  outline: none;
+}
+
+
+.form-text {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+
+.button {
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #238636; 
+  color: #ffffff;
+
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.button:hover {
+  background: #2ea043;
+}
+
+
+.text-center {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+.text-center a {
+  color: #58a6ff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+} */

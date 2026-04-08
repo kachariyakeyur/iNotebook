@@ -21,9 +21,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <h4 className="navbar-brand">
           iNotebook
-        </Link>
+        </h4>
         <button
           className="navbar-toggler"
           type="button"
@@ -49,7 +49,7 @@ function Navbar() {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <Link className="btn btn-primary mx-2" to="/login" role="button" onClick={handleLogout}>LogOut</Link>
+            <Link className="btn logout mx-2" to="/login" role="button" onClick={handleLogout}>LogOut</Link>
           </form>
         </div>
       </div>

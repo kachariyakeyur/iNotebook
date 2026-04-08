@@ -29,10 +29,10 @@ const Notes = () => {
       { edit ? <EditNote setEdit={setEdit} editNoteid={editNoteid} /> : <AddNote/> }
      
     <div className="row my-3 notes">
-      <h2>Your Notes</h2>
-      <div className="container text-center my-3"><h4>
-      {notes.length===0 && "No notes to Display"}
-      </h4></div>
+      <h1>Your Notes</h1>
+      <div className="container text-center my-3">
+      {notes.length===0 && <h4>No notes to Display</h4>}
+      </div>
       {notes.map((note) => {
         return <NoteItems key={note._id} setEdit={setEdit} setEditNoteid={setEditNoteid} note={note} />;
       })}

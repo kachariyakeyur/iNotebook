@@ -28,11 +28,14 @@ function NoteItems(props) {
      
       <div className="card my-3 item">
         <div className="card-body">
-            <div className="d-flex align-items-center ">
+            <div className=" notes-heading">
+              <div>
           <h5 className="card-title">{note.title}</h5>
-          <i className="fa-solid fa-trash-can mx-2"  onClick={dNote}  ></i>
-          <i className="fa-solid fa-pencil mx-2"  onClick={eNote} ></i>
-
+          </div>
+          <div className="notes-right">
+          <i className="fa-solid fa-pencil mx-2 edit"  onClick={eNote} ></i>
+          <i className="fa-solid fa-trash-can mx-2 delete"  onClick={dNote}  ></i>
+          </div>
             </div>
           <p className="card-text">
             {note.description}

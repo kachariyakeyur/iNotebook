@@ -45,7 +45,7 @@ const Login = () => {
       <form className="LS-card" onSubmit={submit}>
         <img src="sketchbook.png" alt="notebook" />
         <h2>Welcome Back</h2>
-        <div className="mb-3">
+        <div className="mb-2">
           <label htmlFor="email" className="form-label">
             Email address
           </label>
@@ -57,6 +57,7 @@ const Login = () => {
             name="email"
             onChange={onChange}
             placeholder="Enter Email"
+            required
           />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.

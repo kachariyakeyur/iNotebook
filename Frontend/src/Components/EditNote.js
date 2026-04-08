@@ -25,9 +25,11 @@ const EditNote = (props) => {
         setEdit(false);
       }
 
+      const [changed, setChanged] = useState(false);
+
       const onChange = (e)=>{
         setNote({...note, [e.target.name] : e.target.value})
-
+        setChanged(true)
       }
 
   return (
@@ -56,9 +58,9 @@ const EditNote = (props) => {
             <label htmlFor="description" className="form-label">
               <h3>Notes</h3>
             </label>
-            <input
+            <textarea
               type="text"
-              className="form-control"
+              className="form-control textarea"
               id="description"
               name="description"
               aria-describedby="description"
@@ -82,13 +84,14 @@ const EditNote = (props) => {
               onChange={onChange}
             />
           </div>
-          
-          <button type="submit" className="btn note-button mx-2" onClick={add} disabled={note.title.length<3 || note.description.length <5} >
+          <div className="edit-buttons-position">
+          <button type="submit" className="button mx-2" onClick={add} disabled={ !changed || note.title.length<3 || note.description.length <5} >
             Edit Note
           </button>
-          <button type="button" className="btn note-button mx-2" onClick={() => setEdit(false)} >
+          <button type="button" className="button mx-2" onClick={() => setEdit(false)} >
             Cancel
           </button>
+          </div>
         </form>
       </div>
   )
